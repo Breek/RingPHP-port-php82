@@ -31,11 +31,12 @@ class CompletedFutureArray extends CompletedFutureValue implements FutureArrayIn
         unset($this->result[$offset]);
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->result);
     }
 
+    #[\ReturnTypeWillChange]
     public function getIterator()
     {
         return new \ArrayIterator($this->result);
